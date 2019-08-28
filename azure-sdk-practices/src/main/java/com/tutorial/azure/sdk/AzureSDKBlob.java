@@ -41,7 +41,9 @@ public class AzureSDKBlob {
         
         //AzureSDKBlob.createContainerURL(storageAccountName);
         
-        AzureSDKBlob.uploadFile();
+        //AzureSDKBlob.uploadFile();
+        
+        //AzureSDKBlob.downloadFile();
     }
     
     public static StorageAccount createStorageAccount(Azure azureData, 
@@ -115,5 +117,23 @@ public class AzureSDKBlob {
         System.out.println("Uploading the sample file ");
         blob.uploadFromFile(CredentialProvider.getDataFile().getAbsolutePath());
     }
-
+    
+    public static void downloadFile() throws Exception {
+        CloudStorageAccount storageAccount;
+        CloudBlobClient blobClient = null;
+        CloudBlobContainer container = null;
+        
+        String storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=storageblob8647;AccountKey=0sWtPgSv+xCaGu7p82ISLxSME/9gfCAi0dDkGf58qGWpK5XzsoOmknrxfUDILpsdroPAUsAVrxKEGhmxiVvvkQ==;EndpointSuffix=core.windows.net";
+        
+        // Parse the connection string and create a blob client to interact with Blob storage
+        storageAccount = CloudStorageAccount.parse(storageConnectionString);
+        blobClient = storageAccount.createCloudBlobClient();
+        container = blobClient.getContainerReference("datacontainer");
+        
+        //Get blob reference
+        CloudBlockBlob blob = container.getBlockBlobReference("dataFile.txt");
+        
+        //Download file
+        blob.downloadToFile("C:\\Users\\admin12345\\projects\\azure-sdk-practices\\src\\main\\java\\com\\tutorial\\azure\\sdk\\dataFile2.txt");
+    }
 }
