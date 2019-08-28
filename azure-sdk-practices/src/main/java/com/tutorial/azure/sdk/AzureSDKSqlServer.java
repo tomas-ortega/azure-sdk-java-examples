@@ -12,7 +12,7 @@ public class AzureSDKSqlServer {
         String resourceGroupName = "sdk-practices";
         String databaseName = "sqldatabasetomy";
         String databaseServerName = "sqlservertomy";
-        String sqlServerId = "/subscriptions/df003387-d41d-46ce-8c1b-f06992f713d7/resourceGroups/sdk-practices/providers/Microsoft.Sql/servers/sqlservertomy";
+        String sqlServerId = "<SERVER_ID>";
         String sqlDatabaseId = "sqlservertomy";
         
         Azure azureData = CredentialProvider.getLogin();
