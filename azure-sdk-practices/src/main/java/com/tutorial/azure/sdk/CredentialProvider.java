@@ -2,10 +2,7 @@ package com.tutorial.azure.sdk;
 
 import com.microsoft.azure.management.Azure;
 import com.microsoft.rest.LogLevel;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
-import java.io.Writer;
 
 public class CredentialProvider {
     

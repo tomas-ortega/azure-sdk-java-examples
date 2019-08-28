@@ -17,6 +17,8 @@
             <artifactId>azure</artifactId>
             <version>1.24.1</version>
           </dependency>
+          
+        <!-- Azure Storage Service -->
         <dependency>
             <groupId>com.microsoft.azure</groupId>
             <artifactId>azure-storage-blob</artifactId>
@@ -31,6 +33,18 @@
             <groupId>com.microsoft.azure</groupId>
             <artifactId>azure-mgmt-storage</artifactId>
             <version>1.3.0</version>
+        </dependency>
+        
+        <!-- Azure Database Service -->
+         <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>6.2.1.jre8</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.3</version>
         </dependency>
     </dependencies>
 </project>
